@@ -18,8 +18,9 @@
       if counter(page).get().first() > 1 {
         grid(
           columns: (1fr, 1fr),
-          align(left + top)[#studentinfo], align(right + top)[#context document.title],
+          align(left + bottom)[#studentinfo], align(right + bottom)[#context document.title],
         )
+        line(length: 100%, stroke: 0.5pt)
       }
     },
   )
