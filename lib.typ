@@ -34,6 +34,21 @@
     }
   }
 
+  let day_suffix(thedate) = {
+    let day = thedate.day()
+    if day in (11, 12, 13) {
+      "th"
+    } else if calc.rem(day, 10) == 1 {
+      "st"
+    } else if calc.rem(day, 10) == 2 {
+      "nd"
+    } else if calc.rem(day, 10) == 3 {
+      "rd"
+    } else {
+      "th"
+    }
+  }
+
   set document(
     title: [#course #coursetitle \- #box[TMA #leading_zero(tma)]
       #if tmapart != "" [\- #box[Part #tmapart]]],
@@ -46,7 +61,8 @@
     #set text(size: 14pt)
     #student (#identifier)\
     #link(mailto)[#email]\
-    #datetime.today().display("[day] [month repr:long] [year]")
+    #let today = datetime.today()
+    #today.display("[day]" + day_suffix(today) + " [month repr:long] [year]")
   ]
 
   body
