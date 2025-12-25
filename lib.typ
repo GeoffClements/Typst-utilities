@@ -24,7 +24,7 @@
       }
     },
   )
-  set text(font: "New Computer Modern", size: 12pt)
+  set text(font: "New Computer Modern")
 
   let leading_zero(val) = {
     if val < 10 {
