@@ -68,17 +68,28 @@
   body
 }
 
+// Base count for questions, used to determine if first header should
+// go on page 1
+#let _q_cnt = counter("_q_cnt")
+
+// Header counters to display question and subquestion numbers
 #let q_cnt = counter("q_cnt")
 #let sub_q_cnt = counter("sub_q_cnt")
 #let sub_sub_q_cnt = counter("sub_sub_q_cnt")
 
-#let question() = {
-  q_cnt.step()
+#let question(from: none) = {
+  if from == none {
+    q_cnt.step()
+  } else {
+    q_cnt.update(from)
+  }
+
+  _q_cnt.step()
   sub_q_cnt.update(0)
   sub_sub_q_cnt.update(0)
 
   context {
-    if q_cnt.get().first() > 1 {
+    if _q_cnt.get().first() > 1 {
       pagebreak(weak: true)
     }
     [= Question #q_cnt.display()]
