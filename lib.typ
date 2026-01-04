@@ -24,7 +24,6 @@
       }
     },
   )
-  set text(font: "Liberation Sans")
 
   let leading_zero(val) = {
     if val < 10 {
