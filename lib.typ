@@ -67,8 +67,8 @@
   body
 }
 
-// Base count for questions, used to determine if first header should
-// go on page 1
+// Base count for questions, used to determine if a header should
+// go on page 1 (i.e is it the first)
 #let _q_cnt = counter("_q_cnt")
 
 // Header counters to display question and subquestion numbers
