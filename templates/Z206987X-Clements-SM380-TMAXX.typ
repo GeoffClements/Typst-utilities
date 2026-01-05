@@ -18,6 +18,11 @@
   tmapart: tmapart,
 )
 
+#set text(font: "Liberation Sans", lang: "en", region: "GB")
+#set par(justify: true)
+#set table(stroke: none)
+#show table.cell.where(y: 0): set text(weight: "bold")
+
 #question()
 Answer 1
 
