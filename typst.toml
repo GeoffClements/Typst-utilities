@@ -2,3 +2,7 @@
 name = "ou-tma"
 version = "0.1.0"
 entrypoint = "ou-tma.typ"
+
+[template]
+path = "templates"
+entrypoint = "Z206987X-Clements-SM380-TMAXX.typ"
