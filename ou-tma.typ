@@ -50,7 +50,7 @@
 
   set document(
     title: [#course -- #coursetitle -- #box[TMA #leading_zero(tma)]
-      #if tmapart != "" [ #box[-- Part #tmapart]]],
+      #if tmapart.len() > 0 [ #box[-- Part #tmapart]]],
     author: student,
     description: "TMA submission for " + course + " - " + coursetitle,
   )
