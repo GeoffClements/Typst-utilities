@@ -61,7 +61,7 @@
     #student (#identifier)\
     #link(mailto)[#email]\
     #let today = datetime.today()
-    #today.display("[day padding:none]" + day_suffix(today) + " [month repr:long] [year]")
+    #today.display("[day padding:none]")#super(day_suffix(today)) #today.display("[month repr:long] [year]")
   ]
 
   body
