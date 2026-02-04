@@ -73,8 +73,6 @@
 
 // Header counters to display question and subquestion numbers
 #let q_cnt = counter("q_cnt")
-#let sub_q_cnt = counter("sub_q_cnt")
-#let sub_sub_q_cnt = counter("sub_sub_q_cnt")
 
 #let question(from: none) = {
   if from == none {
@@ -84,8 +82,6 @@
   }
 
   _q_cnt.step()
-  sub_q_cnt.update(0)
-  sub_sub_q_cnt.update(0)
 
   context {
     if _q_cnt.get().first() > 1 {
@@ -96,18 +92,17 @@
 }
 
 #let subquestion() = {
-  sub_q_cnt.step()
-  sub_sub_q_cnt.update(0)
+  q_cnt.step(level: 2)
 
   context {
-    [== #sub_q_cnt.display("a")]
+    [== #q_cnt.display((_, l2) => numbering("a", l2))]
   }
 }
 
 #let subsubquestion() = {
-  sub_sub_q_cnt.step()
+  q_cnt.step(level: 3)
 
   context {
-    [=== #sub_sub_q_cnt.display("i")]
+    [=== #q_cnt.display((_, _, l3) => numbering("i", l3))]
   }
 }
