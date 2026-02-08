@@ -95,7 +95,7 @@
   q_cnt.step(level: 2)
 
   context {
-    [== #q_cnt.display((_, l2) => numbering("a", l2))]
+    [== #q_cnt.display((..lvls) => numbering("a", lvls.at(1)))]
   }
 }
 
@@ -103,6 +103,6 @@
   q_cnt.step(level: 3)
 
   context {
-    [=== #q_cnt.display((_, _, l3) => numbering("i", l3))]
+    [=== #q_cnt.display((..lvls) => numbering("i", lvls.at(2)))]
   }
 }
