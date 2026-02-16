@@ -74,6 +74,8 @@
 // Header counters to display question and subquestion numbers
 #let q_cnt = counter("q_cnt")
 
+/// Start a major question on a new page
+/// - from (int): start counting from this number
 #let question(from: none) = {
   if from == none {
     q_cnt.step()
@@ -91,6 +93,7 @@
   }
 }
 
+/// Start a sub-question (one level below a question)
 #let subquestion() = {
   q_cnt.step(level: 2)
 
@@ -99,6 +102,7 @@
   }
 }
 
+/// Start a sub-sub-question (two levels below a question)
 #let subsubquestion() = {
   q_cnt.step(level: 3)
 
