@@ -12,8 +12,8 @@
 
 #set text(font: "Liberation Sans", lang: "en", region: "GB")
 #set par(justify: true)
-#set table(stroke: none)
 #show table.cell.where(y: 0): set text(weight: "bold")
+#set table(stroke: (_, y) => if y == 0 { (top: 1pt, bottom: 1pt) } else { none })
 
 #question()
 
