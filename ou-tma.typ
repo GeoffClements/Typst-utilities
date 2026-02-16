@@ -52,7 +52,7 @@
     title: [#course -- #coursetitle -- #box[TMA #leading_zero(tma)]
       #if tmapart.len() > 0 [ #box[-- Part #tmapart]]],
     author: student,
-    description: "TMA submission for " + course + " - " + coursetitle,
+    description: [TMA submission for #course - #coursetitle],
   )
 
   align(center)[
